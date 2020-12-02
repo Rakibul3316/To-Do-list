@@ -2,7 +2,7 @@ import React from "react";
 import PropsTypes from "prop-types";
 import { Label, CustomInput } from "reactstrap";
 
-const ViewController = ({ view, changeView }) => {
+const ViewController = ({ view, changeView }) => (
   <div className="d-flex">
     <Label for="list-view" className="mr-4">
       <CustomInput
@@ -12,7 +12,7 @@ const ViewController = ({ view, changeView }) => {
         id="list-view"
         onChange={changeView}
         className="d-inline-block"
-        checked={view == "list"}
+        checked={view === "list"}
       />
       List View
     </Label>
@@ -24,12 +24,12 @@ const ViewController = ({ view, changeView }) => {
         id="table-view"
         onChange={changeView}
         className="d-inline-block"
-        checked={view == "table"}
+        checked={view === "table"}
       />
       Table View
     </Label>
-  </div>;
-};
+  </div>
+);
 
 ViewController.propsTypes = {
   view: PropsTypes.func.isRequired,

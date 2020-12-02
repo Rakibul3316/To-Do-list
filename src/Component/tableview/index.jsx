@@ -1,18 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { CustomInput, Button, Table } from "reactstrap";
-import Todos from "../todos";
 
 const RowItem = ({ todo, toggleSelect, toggleComplete }) => (
   <tr>
-    <td scope="row">
+    <th scope="row">
       <CustomInput
         type="checkbox"
         id={todo.id}
         checked={todo.isSelect}
         onChange={() => toggleSelect(todo.id)}
       />
-    </td>
+    </th>
     <td>{todo.time.toDateString()}</td>
     <td>{todo.text}</td>
     <td>
